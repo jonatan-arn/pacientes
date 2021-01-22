@@ -1,0 +1,58 @@
+<odoo>
+  <data>
+  <record model="ir.ui.view" id="pacientes.listado_paciente_form">
+      <field name="name">Formulario de paciente</field>
+      <field name="model">pacientes.paciente_model</field>
+      <field name="arch" type="xml">
+        <form string="Nuevo paciente">
+          <sheet>
+            <notebook>
+              <page string="Datos de la persona">
+                <group name="GrupoPadre">
+                  <group name="GrupoIzq">      
+                    <field name="name"/>
+                    <field name="apellidos"/>
+                    <field name="dni"/>
+                  </group>
+                  <group name="GrupoDer">
+                    <field name="telefono"/>
+                    <field name="email" widget="email"/>
+                    <field name="nacimiento"/>
+                  </group>
+                </group>            
+              </page>
+              <page string="Datos del Paciente">
+                <group name="GrupoPadre">
+                  <field name="numero_visitas"/>
+                  <field name="historials_visitas"/>              
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="pacientes.listado_paciente_tree">
+      <field name="name">Listado de paciente</field>
+      <field name="model">pacientes.paciente_model</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+              <field name="apellidos"/>
+              <field name="dni"/>
+              <field name="telefono"/>
+              <field name="email"/>
+              <field name="nacimiento"/>
+              <field name="numero_visitas"/>
+              <field name="historials_visitas"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.actions.act_window" id="pacientes.action_window_paciente">
+      <field name="name">Pacientes</field>
+      <field name="res_model">pacientes.paciente_model</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+  </data>
+</odoo>

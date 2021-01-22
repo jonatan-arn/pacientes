@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+      <menuitem name="pacientes" id="pacientes.menu_root"/>
+      <menuitem name="Pacientes" id="pacientes.menu_paciente" parent="pacientes.menu_root"/>
+      <menuitem name="Listado" id="pacientes.menu_paciente_listado" parent="pacientes.menu_paciente"
+      action="pacientes.action_window_paciente"/>
+      <menuitem name="Historial" id="pacientes.menu_historial" parent="pacientes.menu_root"/>a
+      <menuitem name="Listado" id="pacientes.menu_historial_listado" parent="pacientes.menu_historial"
+      action="pacientes.action_window_historial"/>
+    </data>
+</odoo>
