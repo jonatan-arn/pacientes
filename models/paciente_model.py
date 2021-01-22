@@ -13,8 +13,8 @@ class paciete_model(models.Model):
     dni = fields.Char(string="Dni",index=True,required=True)
     telefono = fields.Integer(string="Telefono",index=True,required=True)
     email = fields.Char(string="correo electronico",index=True,required=True)
-    nacimiento = fields.Date(string="Fecha de nacimiento",index=True,required=True)
-    numero_visitas = fields.Integer(string="Numero de visitas",index=True,required=True, default=0,editable=False)
+    nacimiento = fields.Date(string="Fecha de nacimiento",index=True,required=True,)
+    numero_visitas = fields.Integer(string="Numero de visitas",compute="setNumero_visitas")
     historials_visitas = fields.One2many("pacientes.historial_model","paciente_id")
     
 
